@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  nginx:
+    image: adguard/adguardhome:latest
+    container_name: adguardhome
+    restart: unless-stopped
+    volumes:
+      - ./data/work:/opt/adguardhome/work
+      - ./data/conf:/opt/adguardhome/conf
+    ports:
+      - "8080:80"
+      - "44343:443"
+      - "53:53"
+      - "67:67"
+      - "68:68"
+      - "3000:3000"
+      - "853:853"
+      - "784:784"
+      - "8853:8853"
+      - "5443:5443"
